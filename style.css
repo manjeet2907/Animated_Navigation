@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+*{
+   
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Muli', sans-serif;
+    display:flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+    /* overflow: hidden; */
+    background-color: #eafbff;
+    background: linear-gradient(
+        to bottom,
+        #eafbff 0%,
+        #eafbff 50%,
+        #5290f9 50%,
+        #5290f9 100%
+    );
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width:6rem;
+    height:6rem;
+    overflow-x: hidden;
+    padding:2rem;
+    position:relative;
+    box-shadow: .1rem .2rem rgba(0,0,0,0.3);
+    border-radius: 1rem;
+    width: transistion 0.6s linear;
+    
+}
+nav.active{
+    width:35rem;
+}
+
+nav ul{
+    display: flex;
+    opacity:0;
+    padding: 0;
+    margin: 0;
+    width: 0;
+    transition: width 0.6s linear;
+}
+nav.active ul {
+    width: 100%;
+  }
+  
+
+nav.active li{
+    font-size:3rem;
+    list-style: none;
+    margin-right: 1.5rem;
+    text-transform: uppercase;
+
+}
+
+.btn{
+    margin:0;
+    width : 4rem;
+    height: 4rem;
+    position: relative;
+    background-color: #fff;
+    outline:none;
+    border:0;
+    cursor: pointer;
+}
+
+.btn .icon{
+    background-color: #5290f9;
+    height: .3rem;
+    width: 3rem;
+    position: absolute;
+    top: .5rem;
+    left:1rem;
+}
+
+.btn .line2 {
+    top: auto;
+    bottom: 10px;
+  }
+  

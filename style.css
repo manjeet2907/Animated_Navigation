@@ -28,63 +28,85 @@ nav{
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    width:6rem;
-    height:6rem;
-    overflow-x: hidden;
+    width:8rem;
     padding:2rem;
-    position:relative;
+    /* height:6rem; */
+    overflow-x: hidden;
+    /* position:relative; */
     box-shadow: .1rem .2rem rgba(0,0,0,0.3);
     border-radius: 1rem;
-    width: transistion 0.6s linear;
-    
+    transition: width 0.6s linear;   
 }
+
 nav.active{
     width:35rem;
 }
 
 nav ul{
     display: flex;
-    opacity:0;
     padding: 0;
     margin: 0;
     width: 0;
+    list-style-type: none;
     transition: width 0.6s linear;
 }
 nav.active ul {
     width: 100%;
   }
   
-
-nav.active li{
-    font-size:3rem;
-    list-style: none;
-    margin-right: 1.5rem;
-    text-transform: uppercase;
-
-}
-
-.btn{
-    margin:0;
-    width : 4rem;
-    height: 4rem;
-    position: relative;
+nav ul li {
+    transform: rotateY(0deg);
+    opacity: 0;
+    /* margin:1rem; */
+    transition: transform 0.6s linear, opacity 0.6s linear;
+  }
+  
+nav.active ul li {
+    opacity: 1;
+    transform: rotateY(360deg);
+  }
+  
+  
+.icon {
     background-color: #fff;
-    outline:none;
-    border:0;
+    border: 0;
     cursor: pointer;
-}
-
-.btn .icon{
-    background-color: #5290f9;
-    height: .3rem;
+    padding: 0;
+    position: relative;
+    height: 3rem;
     width: 3rem;
-    position: absolute;
-    top: .5rem;
-    left:1rem;
-}
+  }
+  
+  .icon:focus {
+    outline: 0;
+  }
+  nav ul a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.3rem;
+    margin: 0 10px;
+  }
 
-.btn .line2 {
+  .icon .line {
+    background-color: #5290f9;
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    transition: transform 0.6s linear;
+  }
+  
+.icon .line2 {
     top: auto;
     bottom: 10px;
   }
   
+  nav.active .icon .line1 {
+    transform: rotate(-765deg) translateY(5.5px);
+  }
+  
+  nav.active .icon .line2 {
+    transform: rotate(765deg) translateY(-5.5px);
+  }
